@@ -1,0 +1,9 @@
+
+Y en `requirements.txt` puedes ir poniendo tus librerías, por ejemplo:
+
+```txt
+pandas
+requests
+beautifulsoup4
+lxml
+selenium
