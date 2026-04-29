@@ -19,6 +19,8 @@ import random
 import logging
 import requests
 import pandas as pd
+import signal
+from datetime import date, datetime
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 from collections import namedtuple
@@ -299,6 +301,10 @@ def main():
     log.info(f"URLs pendientes: {len(urls_pendientes)}")
 
     for i, url_base in enumerate(tqdm(urls_pendientes)):
+        # ── Verificar hora límite ──────────────────────────
+        if datetime.now().hour >= 7:
+            log.info("⏰ Hora límite alcanzada, terminando limpiamente...")
+            break
         log.info(f"[{i+1}/{len(urls_pendientes)}] {url_base}")
 
         try:
