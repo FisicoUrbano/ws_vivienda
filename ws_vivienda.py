@@ -25,6 +25,7 @@ from bs4 import BeautifulSoup
 from tqdm import tqdm
 from collections import namedtuple
 from datetime import date
+import pytz
 
 # ── Logging ────────────────────────────────────────────────────────────────────
 LOG_DIR = os.path.join(os.path.dirname(__file__), "logs")
@@ -302,7 +303,8 @@ def main():
 
     for i, url_base in enumerate(tqdm(urls_pendientes)):
         # ── Verificar hora límite ──────────────────────────
-        if datetime.now().hour >= 7:
+        cdmx = pytz.timezone("America/Mexico_City")
+        if datetime.now(cdmx).hour >= 23:
             log.info("⏰ Hora límite alcanzada, terminando limpiamente...")
             break
         log.info(f"[{i+1}/{len(urls_pendientes)}] {url_base}")
