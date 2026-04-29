@@ -1,0 +1,19 @@
+# Datos y checkpoints
+*.csv
+checkpoint.json
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# Docker
+*.tar
