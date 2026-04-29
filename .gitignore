@@ -1,19 +1,30 @@
-# Datos y checkpoints
-*.csv
-checkpoint.json
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Entornos
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
 
 # Logs
 logs/
+*.log
 
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
+# Datos pesados o sensibles
+data/raw/
+data/processed/
+outputs/
 
-# Jupyter
-*.ipynb
-.ipynb_checkpoints/
-
-# Docker
-*.tar
+# Secretos
+config.py
+.env
